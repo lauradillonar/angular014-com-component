@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./hijo.component.css']
 })
 export class HijoComponent implements OnInit {
-  @Input() usuarioInChild:String = "";
+  @Input('usuarioInChild') elUsuarioInChild:String = "";
   constructor() { }
 
   ngOnInit(): void {
