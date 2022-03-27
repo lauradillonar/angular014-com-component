@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -6,15 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./hijo.component.css']
 })
 export class HijoComponent implements OnInit {
-  private _usuarioInChild: string ='';
   
-  public get elUsuarioInChild(): string{
-    return this._usuarioInChild;
+  mensaje = "Hola mundo";
+
+  @Output() miEvento = new EventEmitter();
+
+  ejecutarEvento(){
+    this.miEvento.emit(this.mensaje);
   }
 
-  @Input('usuarioInChild') public set elUsuarioInChild(value: string){
-    this._usuarioInChild=value;
-  }
   constructor() { }
 
   ngOnInit(): void {
