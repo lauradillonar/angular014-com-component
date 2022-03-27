@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Comunicación entre Componentes';
+  mensajeInParent: string = "";
   
-  getMensaje(e: Event){
+  getMensaje(e: string){
     console.log(e);
+    this.mensajeInParent = e;
   }
 }

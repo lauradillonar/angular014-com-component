@@ -9,7 +9,7 @@ export class HijoComponent implements OnInit {
   
   mensaje = "Hola mundo";
 
-  @Output() miEvento = new EventEmitter();
+  @Output() miEvento = new EventEmitter<string>();
 
   ejecutarEvento(){
     this.miEvento.emit(this.mensaje);
